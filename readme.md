@@ -1,4 +1,4 @@
-# Install PHP8 Apache MySQL
+# Install PHP8 Apache MySQL dengan Docker
 
 1. pastikan sudah ada docker di komputer
 2. Silakan fork project ini, kemudian clone di laptop/komputer yang teman-teman punya
