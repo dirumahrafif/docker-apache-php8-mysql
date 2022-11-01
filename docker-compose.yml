@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  webserver:
+    container_name: webserver
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - database
+    volumes:
+      - ./www:/var/www/html/
+    ports:
+      - 80:80
+  database:
+    container_name: database
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: MYSQL_PASSWORD
+      MYSQL_DATABASE: MYSQL_DATABASE
+      MYSQL_USER: MYSQL_USER
+      MYSQL_PASSWORD: MYSQL_PASSWORD
+    ports:
+      - 9906:3306
+    volumes:
+      - ./dbdata:/var/lib/mysql
