@@ -5,12 +5,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    restart: always
     depends_on:
       - database
     volumes:
       - ./www:/var/www/html/
     ports:
       - 80:80
+      - 443:443
   database:
     container_name: database
     image: mysql
